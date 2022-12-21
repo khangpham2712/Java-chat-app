@@ -1,0 +1,7 @@
+
+c
+java:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ä×ß£ýÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(Ÿ³‹Ÿ
+S	java:S106!"9Replace this use of System.out or System.err by a logger.(ËÜÔ¯þÿÿÿÿ
+R
+java:S3655"7Call "Optional#isPresent()" before accessing the value.(æëÊ§ùÿÿÿÿ

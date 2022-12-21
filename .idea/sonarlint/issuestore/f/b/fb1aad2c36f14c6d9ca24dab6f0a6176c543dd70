@@ -1,0 +1,15 @@
+
+\
+java:S2259!"FA "NullPointerException" could be thrown; "getUser()" can return null.(ş¬»
+a
+java:S2259%"FA "NullPointerException" could be thrown; "getUser()" can return null.(Õäá“ÿÿÿÿÿ
+a
+java:S2259<"FA "NullPointerException" could be thrown; "getUser()" can return null.(Õäá“ÿÿÿÿÿ
+\
+java:S22598"FA "NullPointerException" could be thrown; "getUser()" can return null.(ş¬»
+N	java:S106!"9Replace this use of System.out or System.err by a logger.(ş¬»
+N	java:S106""9Replace this use of System.out or System.err by a logger.(Œ¨æ´
+S	java:S106$"9Replace this use of System.out or System.err by a logger.(şğğêşÿÿÿÿ
+N	java:S1068"9Replace this use of System.out or System.err by a logger.(ş¬»
+N	java:S1069"9Replace this use of System.out or System.err by a logger.(Œ¨æ´
+S	java:S106;"9Replace this use of System.out or System.err by a logger.(şğğêşÿÿÿÿ

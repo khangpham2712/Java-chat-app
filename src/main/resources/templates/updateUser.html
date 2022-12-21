@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+  <script type="text/javascript" th:src="@{/js/urlGlo.js}"></script>
+  <script type="text/javascript" th:src="@{/js/menu.js}"></script>
+  <script type="text/javascript" th:src="@{/js/main.js}"></script>
+  <script type="text/javascript" th:src="@{/js/authen.js}"></script>
+  <script type="text/javascript" th:src="@{/js/regis.js}"></script>
+  <script type="text/javascript" th:src="@{/js/updateUser.js}"></script>
+</head>
+
+<body>
+<!-- menu -->
+<div id="header">
+
+</div>
+
+<div class="login-form" style="margin-bottom: 50px">
+  <div class="title_login">
+    <h4>Cập nhật thông tin</h4>
+  </div>
+  <div class="img_login">
+    <img src="image/logo_login.jpg">
+  </div>
+  <div class="login_input">
+    <input type="email" name="" id="email" placeholder="email của bạn"><br>
+    <input type="text" name="" id="phone" placeholder="sđt của bạn"><br>
+    <select id="tinh">
+      <option>-- Tỉnh/thành phố--</option>
+    </select>
+    <select id="huyen">
+      <option>-- Quận/huyện--</option>
+    </select>
+    <select id="xa">
+      <option>-- Xã/Thị trấn--</option>
+    </select>
+    <span>avatar</span>
+    <img id="img-preview" class="preview nodisplay" src="" style="width:120px;">
+    <input type="file" name="" id="file" accept=".png,.jpg"><br>
+    <img src="image/loading_1.gif" id="img_loading" class="loading_regis">
+    <button style="margin-bottom: 50px" id="login" onclick="updateUser()">Cập nhật</button>
+  </div>
+</div>
+
+</body>
+<script type="text/javascript">
+  window.onload = function () {
+    loadMenu();
+    loadUserUpdate();
+  }
+
+  var mot = null;
+  async function loadAddres() {
+    var urladd = 'http://'+urlFirst+':8080/api/public/province';
+    const response = await fetch(urladd, {
+      method: 'GET',
+      headers: new Headers({
+
+      })
+    });
+    var province = await response.json();
+
+    var tinh = document.getElementById("tinh");
+    var huyen = document.getElementById("huyen");
+    var xa = document.getElementById("xa");
+
+    for (i = 0; i < province.length; i++) {
+      var option = document.createElement("option");
+      option.text = province[i].name;
+      option.value = i;
+      tinh.add(option);
+    }
+
+    tinh.onchange = function () {
+      huyen.innerHTML = '';
+      for (i = 0; i < province.length; i++) {
+        if(Number(i) === Number(tinh.value)){
+          for(j=0; j< province[i].towns.length; j++){
+            var option = document.createElement("option");
+            option.text = province[i].towns[j].name;
+            option.value = j;
+            huyen.add(option);
+          }
+        }
+      }
+    }
+
+    huyen.onchange = function () {
+      xa.innerHTML = '';
+      for (i = 0; i < province.length; i++) {
+        if(Number(i) === Number(tinh.value)){
+          for(j=0; j< province[i].towns.length; j++){
+            if(Number(j) === Number( huyen.value)){
+              for(k=0; k< province[i].towns[j].villages.length; k++){
+                var option = document.createElement("option");
+                option.text = province[i].towns[j].villages[k].name;
+                option.value = province[i].towns[j].villages[k].id;
+                xa.add(option);
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+
+  document.getElementById("file").onchange = function () {
+    let preview = document.querySelector("img.preview");
+    let file = this.files[0];
+    let reader = new FileReader();
+    reader.onload = function () {
+      preview.src = reader.result;
+    };
+    if (file) {
+      reader.readAsDataURL(file);
+      preview.classList.remove("nodisplay");
+    }
+  };
+</script>
+
+</html>

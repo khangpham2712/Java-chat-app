@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="momopayment-1.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/momo/momopayment-1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

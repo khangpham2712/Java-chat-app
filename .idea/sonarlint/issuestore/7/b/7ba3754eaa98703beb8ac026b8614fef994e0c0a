@@ -1,0 +1,7 @@
+
+a
+java:S2259"FA "NullPointerException" could be thrown; "accessor" is nullable here.(πΎΡυωÿÿÿÿ
+‹
+java:S3252"pUse static access with "org.springframework.messaging.support.NativeMessageHeaderAccessor" for "NATIVE_HEADERS".(θ€“ÿÿÿÿÿ
+X
+java:S1858"="get" returns a string, there's no need to call "toString()".(γ£ϋ–ψÿÿÿÿ

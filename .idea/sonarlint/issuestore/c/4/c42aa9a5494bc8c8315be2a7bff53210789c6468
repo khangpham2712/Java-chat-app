@@ -1,0 +1,9 @@
+
+‹
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(£þ±ýùÿÿÿÿ
+y
+java:S13195"cThe type of "sub" should be an interface such as "List" rather than the implementation "ArrayList".(°®Á¯
+C
+java:S16046"(Make this anonymous inner class a lambda(ëðˆ«ûÿÿÿÿ
+H
+java:S1068"2Remove this unused "userRepository" private field.(¼²Æ÷

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+  <script type="text/javascript" th:src="@{/js/urlGlo.js}"></script>
+  <script type="text/javascript" th:src="@{/js/menu.js}"></script>
+  <script type="text/javascript" th:src="@{/js/main.js}"></script>
+  <script type="text/javascript" th:src="@{/js/authen.js}"></script>
+</head>
+
+<body>
+<!-- menu -->
+<div id="header">
+
+</div>
+
+<div class="login-form">
+  <div class="title_login">
+    <h4>Xác thực</h4>
+  </div>
+  <div class="img_login">
+    <img src="../static/image/logo_login.jpg" th:src="@{/image/logo_login.jpg}" />
+  </div>
+  <div class="login_input">
+    <input type="text" name="" id="key" placeholder="nhập mã xác minh"><br>
+    <span>(xem mã khóa gửi trong email của bạn)</span>
+    <button id="login" onclick="checkRegisKey()">Xác thực tài khoản</button>
+    <p>Quay lại <a href="login.html">Đăng nhập</a> </p>
+  </div>
+</div>
+
+</body>
+<script type="text/javascript">
+  window.onload = function () {
+    loadMenu();
+  }
+</script>
+
+</html>
